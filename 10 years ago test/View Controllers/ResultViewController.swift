@@ -15,15 +15,11 @@ class ResultViewController: UIViewController {
     @IBOutlet var resultDefinitionLable: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
-        countMaxResult()
-        print(result)
+        countResult()
     }
     
-    func countMaxResult() {
-        var maxResult = 0
-        for _ in questions {
-            maxResult += 4
-        }
+    func countResult() {
+        let maxResult = questions.count * 4
         
         switch Double(result) {
         case  ..<(Double(maxResult) * 0.25):
